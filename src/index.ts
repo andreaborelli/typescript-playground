@@ -90,3 +90,61 @@ const list: User[] = [ // si può usare anche Array<User>
 ]; // abbiamo definito un array di oggetti di tipo User
 
 console.log(list[0].name);
+
+// Utilizzo di class e type per la tipizzazione
+
+/* nella maggior parte dei casi si usa interface, 
+in vantaggio che in caso di compilazione pesa zero spazio di memoria 
+è sono utilizzati in fase di compilazione, ma in runtime vengono perse, 
+non occupano nel bundle ovvero nel js distribuito e deployato sul server */
+
+/* le class hanno il vantaggio di poter effettivamente essere usati con il paradigma ad oggetti 
+poter creare un new user, ma occuperanno più memoria, perchè durante il bundle 
+una classe verrà convertita in funzione */
+
+class User3 {
+    id: number;
+    name: string;
+    username?: string;
+    coords: Coords;
+    address?: Address;
+}
+
+const user3: User3 = {id: 1, name: 'Fabio', coords: {lat: 123, long: 456}};
+
+console.log(user3.name);
+
+/* type può essere usato, è molto utile per combinare diversi tipi di dati insieme  */
+
+type user4 = {
+    id: number;
+    name: string;
+    username?: string;
+    coords: Coords;
+    address?: Address;
+} 
+
+const user4: user4 = {id: 1, name: 'Fabio', coords: {lat: 123, long: 456}};
+
+console.log(user4.name);
+
+// altro esempio di class
+
+class User5 {
+    // id: number;
+    // name: string;
+    constructor(private id: number, private name: string) {
+        // this.id = id;
+        // this.name = name;
+    }
+    
+}
+const user5: User5 = new User5(1, 'Luca'); // creiamo un'istanza di User5
+
+console.log(user5 instanceof User5); // ci da true perchè user5 è un'istanza di User5
+
+// altro vantaggio delle classi è quello che può accettare dei parametri
+
+const user6: User5 = new User5(2, 'Andrea');
+
+console.log(user6); 

@@ -80,3 +80,13 @@ user2.address = {
 
 console.log(user2.name, user2.coords.lat, user2.coords.long);
 console.log(user2);
+
+// Tipizzare un array
+
+
+const list: User[] = [ // si può usare anche Array<User>
+    {id: 1, name: 'Fabio'},
+    {id: 2, name: 'Biondi'}
+]; // abbiamo definito un array di oggetti di tipo User
+
+console.log(list[0].name);

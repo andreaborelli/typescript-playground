@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "noImplicitAny": false,
+    "noImplicitAny": false, // indica che non possiamo implicitamente assegnare any obbligati a dichiarare il tipo
     "module": "es6",
     "target": "es5",
     "jsx": "react",

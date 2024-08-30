@@ -12,6 +12,9 @@ console.log(a);
 
 /* inferenza: inferenz è la possibilità di typescript di generare i tipi al nostro posto  */
 
-let b = 123;
+let c: boolean;
+c = true;
+
+let b = 123; // bisogna evitare di usare any perchè non è una buona pratica
 b = 20; // se scrivamo una stringa al posto di un numero ci da errore perchè b è stato inferito come number
-console.log(b);
+console.log(b); 

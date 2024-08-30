@@ -34,3 +34,49 @@ let user: User; // user è un tipo definito in un altro file
 user = {id: 123, name: 'Andrea', username: 'bore'}; // initializziamo user con un oggetto 
 user.username = 'lucas'; // non ci da errore perchè user è stato inferito come oggetto
 console.log(user.name, user.username);
+
+// Tipizzare oggetti complessi
+
+interface User2 {
+    id: number;
+    name: string;
+    username?: string;
+    coords: Coords; 
+    address?: Address; // address è opzionale
+}
+
+interface Coords {
+    lat: number;
+    long: number;
+}
+
+interface Address {
+    street: string;
+    city: string;
+    postalCode: string;
+}
+
+const coordinates: Coords = { lat: 123, long: 456 }; // in questo modo possiamo riutilizzare il tipo Coords
+
+const user2: User2 = {
+    id: 1,
+    name: 'Fabio',
+    coords: {
+        lat: 123,
+        long: 456
+    },
+    // address: {
+    //     street: 'via roma',
+    //     city: 'roma',
+    //     postalCode: '00100'
+    // }
+}
+
+user2.address = {
+    street: 'via roma',
+    city: 'roma',
+    postalCode: '00100'
+}
+
+console.log(user2.name, user2.coords.lat, user2.coords.long);
+console.log(user2);

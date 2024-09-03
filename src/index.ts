@@ -155,3 +155,37 @@ const user6: User5 = new User5(2, 'Andrea');
 user6.doSomething(); // chiamo il metodo doSomething
 
 console.log(user6.id); // con . dot sintaax accediamo alle proprietà della classe
+
+
+
+/* typescript supporta il concetto di getter e setter si tende ad evitarli 
+per avere un codice più pulito e coinciso e si usa public */
+
+class User7 {
+    constructor(public id: number, private name: string) {
+
+    }
+
+    get getId(): string {
+        return 'ID: ' + this.id;
+    }
+
+    set setId(newId: number) {
+        this.id = newId;
+}
+}
+const user7: User7 = new User7(1, 'Luca');
+user7.setId = 123; // setto il nuovo id
+console.log(user7.getId); // ottengo il nuovo id
+
+
+
+// questa non è una buona pratica, getter e settere è la soluzione più indicata
+class User8 {
+    constructor(public id: number, public name: string) {
+    }   
+}
+const user8: User8 = new User8(200, 'Luca');
+user7.id = 300; // setto il nuovo id
+console.log(user7.id); // ottengo il nuovo id
+

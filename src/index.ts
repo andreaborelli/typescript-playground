@@ -133,11 +133,16 @@ console.log(user4.name);
 class User5 {
     // id: number;
     // name: string;
-    constructor(private id: number, private name: string) {
+    constructor(public id: number, private name: string) {
         // this.id = id;
         // this.name = name;
     }
-    
+    /* private non è accessibile direttamente quando si crea un'stanza es. user5.name
+     per fare in modo che questa proprietà sia visibile all'esterno dobbiamo crearla di tipo public
+     */
+    doSomething(){
+        console.log(this.name);
+    };
 }
 const user5: User5 = new User5(1, 'Luca'); // creiamo un'istanza di User5
 
@@ -147,4 +152,6 @@ console.log(user5 instanceof User5); // ci da true perchè user5 è un'istanza d
 
 const user6: User5 = new User5(2, 'Andrea');
 
-console.log(user6); 
+user6.doSomething(); // chiamo il metodo doSomething
+
+console.log(user6.id); // con . dot sintaax accediamo alle proprietà della classe

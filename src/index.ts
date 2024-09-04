@@ -189,3 +189,25 @@ const user8: User8 = new User8(200, 'Luca');
 user7.id = 300; // setto il nuovo id
 console.log(user7.id); // ottengo il nuovo id
 
+// function types
+
+function multiply(a: number, b: number): number { // risultato number
+    return a * b;
+}
+
+function hello(name: string): void { // void indica che la funzione non ritorna nulla
+    console.log('Hello', name);
+}
+
+/* è molto importate specificare il tipo di ritorno di una funzione 
+perchè questo poi andrà ad influire appunto sul valore ovviamente restituito da tale funzione
+
+ */
+
+hello('Fabio');
+
+console.log(multiply(2, 3));
+
+ // i METODI nella programmazione ad oggetti sono funzioni all'interno di una classe
+ 
+ // mentre le FUNZIONI sono fuori dalla classe

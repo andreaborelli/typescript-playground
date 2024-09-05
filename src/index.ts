@@ -211,3 +211,19 @@ console.log(multiply(2, 3));
  // i METODI nella programmazione ad oggetti sono funzioni all'interno di una classe
  
  // mentre le FUNZIONI sono fuori dalla classe
+
+
+ // Type, literals e introduzione a Union types
+
+//  type Role = string;
+
+type Role = 'admin'; // indicando la stringa admin, Role può assumere solo quel valore cioè la stringa admin
+
+const r: Role = 'admin'; /* literals type, cioè un tipo che può assumere un solo valore, 
+ se scriviamo qualcos'altro al posto di admin ci da errore */
+
+
+type Role2 = 'admin' | 'guest'; /* costrutto union types, una sorta di or | 
+ che il tipo di dato accettato sarà sia una stringa admin sia una stringa guest */
+
+const r2: Role2 = 'guest';
